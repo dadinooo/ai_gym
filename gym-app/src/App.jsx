@@ -4,6 +4,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import WorkoutLogger from './components/workout/WorkoutLogger';
 import History from './components/history/History';
 import Profile from './components/profile/Profile';
+import ChatWidget from './components/chat/ChatWidget';
 
 function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -30,6 +31,7 @@ function App() {
   return (
     <Layout activeTab={activeTab} setActiveTab={setActiveTab}>
       {renderContent()}
+      <ChatWidget />
     </Layout>
   );
 }
