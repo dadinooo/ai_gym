@@ -3,6 +3,7 @@ import Layout from './components/layout/Layout';
 import Dashboard from './components/dashboard/Dashboard';
 import WorkoutLogger from './components/workout/WorkoutLogger';
 import History from './components/history/History';
+import Profile from './components/profile/Profile';
 
 function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -15,6 +16,8 @@ function App() {
         return <WorkoutLogger onFinish={() => setActiveTab('dashboard')} />;
       case 'history':
         return <History />;
+      case 'profile':
+        return <Profile />;
       default:
         return (
           <div className="flex items-center justify-center h-[60vh] text-gray-500 italic uppercase tracking-widest">
