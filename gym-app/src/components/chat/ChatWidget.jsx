@@ -37,14 +37,14 @@ const ChatWidget = () => {
   };
 
   return (
-    <div className="fixed bottom-24 right-4 z-[100]">
+    <div className="absolute bottom-24 right-4 z-[100]">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 20, transformOrigin: 'bottom right' }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            className="absolute bottom-16 right-0 w-[calc(100vw-2rem)] max-w-[350px] h-[500px] bg-gym-dark border border-white/10 rounded-3xl shadow-2xl flex flex-col overflow-hidden backdrop-blur-xl"
+            className="absolute bottom-16 right-0 w-[calc(100%-2rem)] w-80 max-w-[350px] h-[500px] bg-gym-dark border border-white/10 rounded-3xl shadow-2xl flex flex-col overflow-hidden backdrop-blur-xl"
           >
             {/* Header */}
             <div className="p-4 bg-gym-gray/50 border-b border-white/5 flex items-center justify-between">

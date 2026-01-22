@@ -11,17 +11,17 @@ const Layout = ({ children, activeTab, setActiveTab }) => {
   ];
 
   return (
-    <div className="flex flex-col h-screen w-full bg-gym-black text-white overflow-hidden">
+    <div className="flex flex-col h-screen w-full max-w-md mx-auto bg-gym-black text-white overflow-hidden relative shadow-2xl">
       {/* Main Content Area */}
       <main className="flex-1 overflow-y-auto pb-24 px-4 pt-6">
-        <div className="max-w-md mx-auto w-full">
+        <div className="w-full">
           {children}
         </div>
       </main>
 
       {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 bg-gym-dark/80 backdrop-blur-lg border-t border-white/5 px-6 py-4 z-50">
-        <div className="max-w-md mx-auto flex justify-between items-center">
+      <nav className="absolute bottom-0 left-0 right-0 bg-gym-dark/80 backdrop-blur-lg border-t border-white/5 px-6 py-4 z-50">
+        <div className="flex justify-between items-center">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
