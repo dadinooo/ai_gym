@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Check, Clock, ChevronRight, X, Play } from 'lucide-react';
+import { Plus, Check, Clock, ChevronRight, X, Play, Video } from 'lucide-react';
 
 const exercises = [
   { id: 1, name: 'Barbell Bench Press', sets: 3, target: '8-12 reps' },
@@ -65,8 +65,14 @@ const WorkoutLogger = ({ onFinish }) => {
           Exercise {currentExerciseIndex + 1}/{exercises.length}
         </div>
         <h2 className="text-3xl font-black italic uppercase leading-none">{currentExercise.name}</h2>
-        <div className="text-gray-400 text-sm mt-2 flex items-center gap-2">
-          <span>Target: <span className="text-white font-mono">{currentExercise.target}</span></span>
+        <div className="flex items-center justify-between mt-2">
+          <div className="text-gray-400 text-sm flex items-center gap-2">
+            <span>Target: <span className="text-white font-mono">{currentExercise.target}</span></span>
+          </div>
+          <button className="flex items-center gap-2 bg-white/5 hover:bg-white/10 text-gym-accent px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide transition-colors border border-gym-accent/20">
+            <Video size={14} />
+            Record
+          </button>
         </div>
       </motion.div>
 
